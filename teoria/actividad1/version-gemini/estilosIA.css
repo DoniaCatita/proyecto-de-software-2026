@@ -1,0 +1,425 @@
+/* ==========================================================================
+   Archivo: estilosIA.css
+   Descripción: Estilos responsivos con alto contraste y accesibilidad.
+   ========================================================================== */
+
+/* Variables CSS para paleta de colores de alto contraste */
+:root {
+    --color-fondo: #0f172a;           /* Azul pizarra oscuro para fondo */
+    --color-superficie: #1e293b;       /* Superficie de tarjetas y bloques */
+    --color-superficie-alt: #334155;   /* Superficie secundaria y bordes */
+    --color-texto-principal: #f8fafc;  /* Blanco suave (contraste óptimo) */
+    --color-texto-secundario: #cbd5e1; /* Gris claro de alta legibilidad */
+    --color-primario: #38bdf8;         /* Azul cian accesible para acentos */
+    --color-primario-hover: #7dd3fc;   /* Tono al hacer hover */
+    --color-borde: #475569;            /* Borde definido */
+    --color-sombra: rgba(0, 0, 0, 0.4);
+    
+    /* Reglas uniformes requeridas para dibujos */
+    --borde-dibujo: 3px solid #38bdf8;
+    --relleno-dibujo: 12px;
+    --radio-dibujo: 8px;
+    --fondo-tarjeta: #1e293b;
+}
+
+/* Reset básico y configuración global */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor centralizado y responsivo */
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header y Barra de Navegación */
+.header-principal {
+    background-color: var(--color-superficie);
+    border-bottom: 2px solid var(--color-superficie-alt);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px var(--color-sombra);
+}
+
+.header-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo-titulo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-primario);
+    letter-spacing: -0.5px;
+}
+
+.nav-principal .nav-lista {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.nav-principal a {
+    color: var(--color-texto-principal);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-principal a:hover,
+.nav-principal a:focus {
+    color: var(--color-fondo);
+    background-color: var(--color-primario);
+    outline: 2px solid var(--color-primario-hover);
+    outline-offset: 2px;
+}
+
+/* Secciones Principales */
+.principal {
+    flex: 1;
+    padding: 2.5rem 0;
+}
+
+.intro-seccion {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.intro-seccion h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-primario);
+}
+
+.intro-seccion p {
+    font-size: 1.15rem;
+    color: var(--color-texto-secundario);
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.seccion-titulo {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-superficie-alt);
+    color: var(--color-primario);
+}
+
+/* Controles del Catálogo (Selector) */
+.control-categoria {
+    background-color: var(--color-superficie);
+    padding: 1.25rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-borde);
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.etiqueta-categoria {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-texto-principal);
+}
+
+.selector-grupo {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+select#selector-categoria {
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    border: 2px solid var(--color-primario);
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+select#selector-categoria:focus {
+    outline: 3px solid var(--color-primario-hover);
+    outline-offset: 2px;
+}
+
+.boton-ir {
+    background-color: var(--color-primario);
+    color: var(--color-fondo);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.boton-ir:hover,
+.boton-ir:focus {
+    background-color: var(--color-primario-hover);
+}
+
+/* Bloques de Categoría */
+.categoria-bloque {
+    background-color: rgba(30, 41, 59, 0.4);
+    border: 1px solid var(--color-superficie-alt);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+.categoria-header {
+    margin-bottom: 1.5rem;
+}
+
+.categoria-header h3 {
+    font-size: 1.5rem;
+    color: var(--color-texto-principal);
+    margin-bottom: 0.25rem;
+}
+
+.categoria-descripcion {
+    color: var(--color-texto-secundario);
+    font-size: 1rem;
+}
+
+/* Grilla responsiva de dibujos */
+.galeria-grilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+/* Especificación uniforme para todos los dibujos */
+.tarjeta-dibujo {
+    background-color: var(--fondo-tarjeta);
+    border: var(--borde-dibujo);
+    padding: var(--relleno-dibujo);
+    border-radius: var(--radio-dibujo);
+    width: 100%;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* Centrado uniforme */
+    text-align: center;      /* Centrado de textos */
+    box-shadow: 0 6px 16px var(--color-sombra);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.tarjeta-dibujo:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-primario-hover);
+}
+
+.dibujo-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;          /* Centrado horizontal de la imagen */
+    border-radius: 4px;
+    background-color: #0b1120;
+}
+
+.dibujo-pie {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    align-items: center;
+}
+
+.dibujo-titulo {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--color-texto-principal);
+}
+
+.dibujo-formato {
+    font-size: 0.85rem;
+    font-weight: 600;
+    background-color: var(--color-superficie-alt);
+    color: var(--color-primario);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* Sección Autor */
+.autor-seccion {
+    margin-bottom: 3.5rem;
+}
+
+.autor-tarjeta {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.autor-avatar-icono {
+    font-size: 3.5rem;
+    background-color: var(--color-fondo);
+    border: 2px solid var(--color-primario);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.autor-detalles h3 {
+    font-size: 1.4rem;
+    color: var(--color-texto-principal);
+}
+
+.autor-rol {
+    color: var(--color-primario);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.autor-bio {
+    color: var(--color-texto-secundario);
+}
+
+/* Sección Contacto */
+.contacto-seccion {
+    margin-bottom: 3.5rem;
+}
+
+.contacto-caja {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.contacto-caja > p {
+    color: var(--color-texto-secundario);
+    margin-bottom: 1.5rem;
+}
+
+.contacto-datos {
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contacto-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.05rem;
+}
+
+.contacto-icono {
+    font-size: 1.25rem;
+}
+
+.contacto-datos a {
+    color: var(--color-primario);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+}
+
+.contacto-datos a:hover,
+.contacto-datos a:focus {
+    color: var(--color-primario-hover);
+}
+
+/* Footer */
+.footer-principal {
+    background-color: var(--color-superficie);
+    border-top: 1px solid var(--color-superficie-alt);
+    padding: 2rem 0;
+    margin-top: auto;
+    text-align: center;
+    color: var(--color-texto-secundario);
+    font-size: 0.95rem;
+}
+
+.footer-creditos {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .header-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav-principal .nav-lista {
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .control-categoria {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .selector-grupo {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    select#selector-categoria, .boton-ir {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .autor-tarjeta {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contacto-item {
+        flex-wrap: wrap;
+    }
+}

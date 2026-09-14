@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galería y catálogo de dibujos digitales en formato PNG: caricaturas, paisajes y animé.">
+    <title>Galería de Arte Digital - Publicación de Dibujos</title>
+    <link rel="stylesheet" href="estilosIA.css">
+</head>
+<body>
+
+    <!-- Encabezado y Navegación Principal -->
+    <header class="header-principal">
+        <div class="contenedor header-contenido">
+            <h1 class="logo-titulo">TrazoDigital</h1>
+            <nav class="nav-principal" aria-label="Navegación principal del sitio">
+                <ul class="nav-lista">
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#autor">Sobre el Autor</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="contenedor principal">
+        
+        <!-- Sección de Bienvenida -->
+        <section class="intro-seccion">
+            <h2>Galería de Dibujos PNG</h2>
+            <p>Explora nuestro catálogo estático de ilustraciones digitales en alta calidad. Selecciona una categoría para ver los dibujos correspondientes.</p>
+        </section>
+
+        <!-- Catálogo con Selector de Categorías -->
+        <section id="catalogo" class="catalogo-seccion" aria-labelledby="titulo-catalogo">
+            <h2 id="titulo-catalogo" class="seccion-titulo">Catálogo de Obras</h2>
+            
+            <!-- Selector de categoría (Navegación estática mediante anclas) -->
+            <div class="control-categoria">
+                <label for="selector-categoria" class="etiqueta-categoria">Seleccionar categoría:</label>
+                <div class="selector-grupo">
+                    <select id="selector-categoria" name="categoria" onchange="if(this.value) location.hash = this.value;">
+                        <option value="#categoria-caricaturas" selected>Caricaturas (3 obras)</option>
+                        <option value="#categoria-paisajes">Paisajes (3 obras)</option>
+                        <option value="#categoria-anime">Animé (3 obras)</option>
+                    </select>
+                    <a href="#categoria-caricaturas" class="boton-ir" id="enlace-ir">Mostrar</a>
+                </div>
+            </div>
+
+            <!-- Categoría 1: Caricaturas -->
+            <article id="categoria-caricaturas" class="categoria-bloque">
+                <header class="categoria-header">
+                    <h3>Categoría: Caricaturas</h3>
+                    <p class="categoria-descripcion">Ilustraciones humorísticas, expresivas y llenas de personalidad.</p>
+                </header>
+                <div class="galeria-grilla">
+                    <figure class="tarjeta-dibujo">
+                        <img src="Imágenes/caricatura_1.png" alt="Caricatura digital de un perro simpático y sonriente con orejas caídas" class="dibujo-img">
+                        <figcaption class="dibujo-pie">
+                            <span class="dibujo-titulo">Amigo Canino</span>
+                            <span class="dibujo-formato">Formato: PNG</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="tarjeta-dibujo">
+                        <img src="Imágenes/caricatura_2.png" alt="Caricatura graciosa de un gato intelectual con anteojos redondos" class="dibujo-img">
+                        <figcaption class="dibujo-pie">
+                            <span class="dibujo-titulo">Gato Erudito</span>
+                            <span class="dibujo-formato">Formato: PNG</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="tarjeta-dibujo">
+                        <img src="Imágenes/caricatura_3.png" alt="Caricatura digital de un búho simpático con grandes gafas y plumas detalladas" class="dibujo-img">
+                        <figcaption class="dibujo-pie">
+                            <span class="dibujo-titulo">Búho Sabio</span>
+                            <span class="dibujo-formato">Formato: PNG</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </article>
+
+            <!-- Categoría 2: Paisajes -->
+            <article id="categoria-paisajes" class="categoria-bloque">
+                <header class="categoria-header">
+                    <h3>Categoría: Paisajes</h3>
+                    <p class="categoria-descripcion">Entornos naturales, atmósferas serenas y paisajes lumínicos.</p>
+                </header>
+                <div class="galeria-grilla">
+                    <figure class="tarjeta-dibujo">
+                        <img src="Imágenes/paisaje_1.png" alt="Pintura digital de cordillera montañosa verde junto a un lago durante el atardecer" class="dibujo-img">
+                        <figcaption class="dibujo-pie">
+                            <span class="dibujo-titulo">Atardecer en el Valle</span>
+                            <span class="dibujo-formato">Formato: PNG</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="tarjeta-dibujo">
+                        <img src="Imágenes/paisaje_2.png" alt="Ilustración de bosque otoñal con río sereno y follaje en tonos dorados y ocres" class="dibujo-img">
+                        <figcaption class="dibujo-pie">
+                            <span class="dibujo-titulo">Río de Otoño</span>
+                            <span class="dibujo-formato">Formato: PNG</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="tarjeta-dibujo">
+                        <img src="Imágenes/paisaje_3.png" alt="Pintura digital de una playa tropical con palmeras y aguas turquesas brillantes" class="dibujo-img">
+                        <figcaption class="dibujo-pie">
+                            <span class="dibujo-titulo">Costa Tropical</span>
+                            <span class="dibujo-formato">Formato: PNG</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </article>
+
+            <!-- Categoría 3: Animé -->
+            <article id="categoria-anime" class="categoria-bloque">
+                <header class="categoria-header">
+                    <h3>Categoría: Animé</h3>
+                    <p class="categoria-descripcion">Personajes de fantasía inspirados en la estética de animación japonesa.</p>
+                </header>
+                <div class="galeria-grilla">
+                    <figure class="tarjeta-dibujo">
+                        <img src="Imágenes/anime_1.png" alt="Ilustración estilo animé de un joven guerrero con cabello puntiagudo y mirada enérgica" class="dibujo-img">
+                        <figcaption class="dibujo-pie">
+                            <span class="dibujo-titulo">Guerrero Celestial</span>
+                            <span class="dibujo-formato">Formato: PNG</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="tarjeta-dibujo">
+                        <img src="Imágenes/anime_2.png" alt="Ilustración estética animé de una joven con cabello pastel rodeada de flores de cerezo" class="dibujo-img">
+                        <figcaption class="dibujo-pie">
+                            <span class="dibujo-titulo">Cerezo en Primavera</span>
+                            <span class="dibujo-formato">Formato: PNG</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="tarjeta-dibujo">
+                        <img src="Imágenes/anime_3.png" alt="Ilustración estilo animé de una hechicera mágica bajo un cielo nocturno estrellado" class="dibujo-img">
+                        <figcaption class="dibujo-pie">
+                            <span class="dibujo-titulo">Magia Estelar</span>
+                            <span class="dibujo-formato">Formato: PNG</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Información del Mantenedor / Autor -->
+        <section id="autor" class="autor-seccion" aria-labelledby="titulo-autor">
+            <h2 id="titulo-autor" class="seccion-titulo">Sobre el Mantenedor del Sitio</h2>
+            <div class="autor-tarjeta">
+                <div class="autor-avatar-icono" aria-hidden="true">🎨</div>
+                <div class="autor-detalles">
+                    <h3>Alex R. Diseñador</h3>
+                    <p class="autor-rol">Ilustrador Digital y Administrador Web</p>
+                    <p class="autor-bio">
+                        Apasionado por la creación gráfica digital en formatos vectoriales y rasterizados.
+                        Este espacio está dedicado a la divulgación, exhibición y distribución de ilustraciones
+                        originales en formato PNG de alta fidelidad visual.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Información de Contacto -->
+        <section id="contacto" class="contacto-seccion" aria-labelledby="titulo-contacto">
+            <h2 id="titulo-contacto" class="seccion-titulo">Información de Contacto</h2>
+            <div class="contacto-caja">
+                <p>¿Interesado en comisiones, colaboraciones o licencias de uso de los dibujos? Contáctanos a través de nuestros canales oficiales:</p>
+                <address class="contacto-datos">
+                    <div class="contacto-item">
+                        <span class="contacto-icono" aria-hidden="true">✉️</span>
+                        <strong>Correo electrónico:</strong> 
+                        <a href="mailto:contacto.dibujos@ejemplo.com">contacto.dibujos@ejemplo.com</a>
+                    </div>
+                    <div class="contacto-item">
+                        <span class="contacto-icono" aria-hidden="true">📞</span>
+                        <strong>Teléfono de atención:</strong> 
+                        <a href="tel:+1234567890">+1 (234) 567-890</a>
+                    </div>
+                    <div class="contacto-item">
+                        <span class="contacto-icono" aria-hidden="true">📍</span>
+                        <strong>Ubicación:</strong> 
+                        <span>Estudio Central de Ilustración</span>
+                    </div>
+                </address>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer-principal">
+        <div class="contenedor footer-contenido">
+            <p>&copy; 2026 TrazoDigital. Todos los dibujos publicados son obras originales en formato PNG.</p>
+            <p class="footer-creditos">Desarrollado con estándares semánticos HTML5 y CSS3 accesible.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

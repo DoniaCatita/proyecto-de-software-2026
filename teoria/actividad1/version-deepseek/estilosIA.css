@@ -1,0 +1,236 @@
+/* ============================
+   Reset básico
+   ============================ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background-color: #f1f5f9;
+  color: #0f172a; /* contraste alto sobre fondo claro */
+  line-height: 1.6;
+}
+
+/* ============================
+   Cabecera y navegación
+   ============================ */
+header {
+  background-color: #1e3a8a;      /* azul oscuro */
+  color: #ffffff;                  /* blanco: contraste 10:1 */
+  padding: 1.5rem 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  margin: 0 0 1rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s, outline 0.2s;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: #2563eb;
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* ============================
+   Contenido principal
+   ============================ */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+section h2 {
+  color: #1e3a8a;
+  border-bottom: 3px solid #1e3a8a;
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.info {
+  background-color: #ffffff;
+  border-left: 6px solid #1e3a8a;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.info a {
+  color: #1d4ed8;                 /* azul sobre blanco: contraste alto */
+  font-weight: 600;
+}
+
+.info a:hover,
+.info a:focus {
+  color: #b91c1c;
+  text-decoration: underline;
+}
+
+/* ============================
+   Selector de categoría
+   ============================ */
+.catalogo {
+  margin-bottom: 2rem;
+}
+
+.selector {
+  border: 2px solid #1e3a8a;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #ffffff;
+}
+
+.selector legend {
+  font-weight: 700;
+  color: #1e3a8a;
+  padding: 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Los radios quedan ocultos visualmente pero accesibles para teclado */
+.selector input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.selector label {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  margin: 0.25rem;
+  border: 2px solid #1e3a8a;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #1e3a8a;
+  font-weight: 700;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.selector label:hover {
+  background-color: #dbeafe;
+}
+
+/* Opción seleccionada */
+.selector input[type="radio"]:checked + label {
+  background-color: #1e3a8a;
+  color: #ffffff;
+}
+
+/* Foco accesible por teclado */
+.selector input[type="radio"]:focus-visible + label {
+  outline: 3px solid #f59e0b;
+  outline-offset: 2px;
+}
+
+/* ============================
+   Galerías: mostrar sólo la activa
+   ============================ */
+.galeria {
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.catalogo:has(#cat-caricaturas:checked) #caricaturas,
+.catalogo:has(#cat-paisajes:checked)   #paisajes,
+.catalogo:has(#cat-anime:checked)      #anime {
+  display: grid;
+}
+
+/* ============================
+   Tarjeta de cada dibujo
+   (todas iguales: mismo borde, mismo relleno, centradas)
+   ============================ */
+.dibujo {
+  background-color: #ffffff;
+  border: 3px solid #1e3a8a;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;                /* centrado horizontal */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dibujo:hover,
+.dibujo:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+.dibujo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  background-color: #f8fafc;
+}
+
+.dibujo figcaption {
+  margin-top: 0.75rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* ============================
+   Pie de página
+   ============================ */
+footer {
+  background-color: #1e3a8a;
+  color: #ffffff;
+  text-align: center;
+  padding: 1.25rem 1rem;
+  margin-top: 2rem;
+}
+
+footer p { margin: 0.25rem 0; }
+
+footer a {
+  color: #fde047;                 /* amarillo sobre azul: contraste alto */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover,
+footer a:focus {
+  text-decoration: underline;
+}
+
+/* ============================
+   Responsivo
+   ============================ */
+@media (max-width: 480px) {
+  header h1 { font-size: 1.4rem; }
+  nav ul { flex-direction: column; align-items: center; }
+  main { padding: 1rem 0.75rem; }
+}

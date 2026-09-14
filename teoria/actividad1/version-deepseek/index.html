@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería de Dibujos PNG</title>
+  <link rel="stylesheet" href="estilosIA.css">
+</head>
+<body>
+
+  <header>
+    <h1>Galería de Dibujos</h1>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#mantenedor">Quién mantiene el sitio</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="catalogo" aria-labelledby="titulo-catalogo">
+      <h2 id="titulo-catalogo">Catálogo de dibujos</h2>
+
+      <div class="catalogo">
+
+        <fieldset class="selector">
+          <legend>Selecciona una categoría</legend>
+
+          <input type="radio" id="cat-caricaturas" name="categoria" checked>
+          <label for="cat-caricaturas">Caricaturas</label>
+
+          <input type="radio" id="cat-paisajes" name="categoria">
+          <label for="cat-paisajes">Paisajes</label>
+
+          <input type="radio" id="cat-anime" name="categoria">
+          <label for="cat-anime">Animé</label>
+        </fieldset>
+
+        <!-- Categoría: Caricaturas -->
+        <section id="caricaturas" class="galeria" aria-label="Galería de caricaturas">
+          <figure class="dibujo">
+            <img src="Imágenes/caricatura-persona.png"
+                 alt="Caricatura de una persona sonriente con cabello castaño y camisa azul">
+            <figcaption>Persona sonriente</figcaption>
+          </figure>
+          <figure class="dibujo">
+            <img src="Imágenes/caricatura-gato.png"
+                 alt="Caricatura de un gato amarillo con orejas grandes y bigotes">
+            <figcaption>Gato feliz</figcaption>
+          </figure>
+          <figure class="dibujo">
+            <img src="Imágenes/caricatura-rey.png"
+                 alt="Caricatura de un rey con corona dorada, bigote y capa roja">
+            <figcaption>El rey</figcaption>
+          </figure>
+        </section>
+
+        <!-- Categoría: Paisajes -->
+        <section id="paisajes" class="galeria" aria-label="Galería de paisajes">
+          <figure class="dibujo">
+            <img src="Imágenes/paisaje-montanas.png"
+                 alt="Paisaje de montañas nevadas con sol y árboles verdes">
+            <figcaption>Montañas nevadas</figcaption>
+          </figure>
+          <figure class="dibujo">
+            <img src="Imágenes/paisaje-playa.png"
+                 alt="Paisaje de playa con palmera, mar azul y arena dorada">
+            <figcaption>Playa tropical</figcaption>
+          </figure>
+          <figure class="dibujo">
+            <img src="Imágenes/paisaje-bosque.png"
+                 alt="Paisaje de bosque con río azul y árboles verdes">
+            <figcaption>Bosque y río</figcaption>
+          </figure>
+        </section>
+
+        <!-- Categoría: Animé -->
+        <section id="anime" class="galeria" aria-label="Galería de dibujos animé">
+          <figure class="dibujo">
+            <img src="Imágenes/anime-chica.png"
+                 alt="Dibujo animé de una chica de cabello oscuro y ojos grandes violeta">
+            <figcaption>Chica animé</figcaption>
+          </figure>
+          <figure class="dibujo">
+            <img src="Imágenes/anime-chico.png"
+                 alt="Dibujo animé de un chico de cabello rubio puntiagudo y ojos azules">
+            <figcaption>Chico animé</figcaption>
+          </figure>
+          <figure class="dibujo">
+            <img src="Imágenes/anime-coletas.png"
+                 alt="Dibujo animé de una chica con coletas rosadas y ojos verdes">
+            <figcaption>Chica con coletas</figcaption>
+          </figure>
+        </section>
+
+      </div>
+    </section>
+
+    <section id="mantenedor" class="info" aria-labelledby="titulo-mantenedor">
+      <h2 id="titulo-mantenedor">¿Quién mantiene este sitio?</h2>
+      <p>Este sitio es mantenido por <strong>Alex García</strong>, ilustrador y desarrollador web aficionado.</p>
+    </section>
+
+    <section id="contacto" class="info" aria-labelledby="titulo-contacto">
+      <h2 id="titulo-contacto">Información de contacto</h2>
+      <p>Correo electrónico: <a href="mailto:contacto@ejemplo.com">contacto@ejemplo.com</a></p>
+      <p>Teléfono: <a href="tel:+34123456789">+34 123 456 789</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Galería de Dibujos — Alex García</p>
+    <p><a href="#catalogo">Volver al catálogo</a></p>
+  </footer>
+
+</body>
+</html>
