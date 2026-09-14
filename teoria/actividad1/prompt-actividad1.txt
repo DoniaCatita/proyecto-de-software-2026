@@ -1,0 +1,20 @@
+Hola, necesito un modelo de un sitio web para publicar dibujos en formato PNG. El modelo debe ser estático pero responsivo. Solo debe contener componentes HTML y CSS. 
+
+Especificaciones HTML:
+- El sitio web debe mostrar una barra de navegación con enlaces a:
+	-Información de contacto (mail, teléfono de ejemplo)
+	-Información de quien mantiene el sitio (nombre genérico)
+	-Catálogo de los dibujos, con 3 categorías: caricaturas, 	paisajes y animé
+-Interacción: se debe poder seleccionar la categoría de dibujo en una lista desplegable. Al seleccionarla, se deben mostrar 3 dibujos de ejemplo de esa categoría (siempre en forma estática)
+- Debe haber al menos 2 imágenes de ejemplo por categoría. Necesito que generes esas imágenes acorde a las categorías dadas 
+- Debes usar las etiquetas semánticas correctamente, para mejorar la accesibilidad de la página. También debes incluir texto alternativo para las imágenes
+
+Especificaciones CSS:
+- La visualización tiene que ser igual para todos los dibujos: deben tener el mismo borde y relleno, y deben estar centrados
+- La paleta de colores a usar tiene que tener un buen contraste para mejorar la legibilidad
+
+Especificaciones estructura:
+- Todas las reglas de estilo deben estar únicamente en un archivo separado denominado estilosIA.css
+- Las imágenes de ejemplo van a guardarse en un directorio denominado "Imágenes"
+
+Necesito que me entreges el html, el css y las imágenes generadas, y además me digas cómo tengo que armar la estructura de los directorios
